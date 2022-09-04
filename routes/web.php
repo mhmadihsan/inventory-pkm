@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('login2',function (){
+    return view('auth.login2');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('try',function (){
+    return view('layouts_stisla.app');
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
