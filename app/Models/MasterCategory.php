@@ -16,4 +16,8 @@ class MasterCategory extends Model
             'description',
             'active',
     ];
+
+    public function sector(){
+        return $this->belongsTo(MasterSector::class,'sector_id','id');
+    }
 }

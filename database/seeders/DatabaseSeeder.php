@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         MasterEmployess::factory(20)->create();
         $this->call(MasterSectorSeeder::class);
         $this->call(MasterCategorySeeder::class);
+        $this->call(UserSeeder::class);
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',

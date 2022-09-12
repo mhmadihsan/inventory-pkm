@@ -6,7 +6,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="{{asset('stisla/assets/js/stisla.js')}}"></script>
 <!-- JS Libraies -->
+
 <!-- Template JS File -->
+<script src="{{asset('stisla/node_modules/select2/dist/js/select2.full.min.js')}}"></script>
 <script src="{{asset('stisla/assets/js/scripts.js')}}"></script>
 <script src="{{asset('stisla/assets/js/custom.js')}}"></script>
+<script src="{{url('https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js')}}" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!-- Page Specific JS File -->
+@yield('custom_js')

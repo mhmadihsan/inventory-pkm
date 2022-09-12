@@ -22,6 +22,6 @@ class TrxArciveFile extends Model
     }
 
     public function category(){
-        return $this->belongsTo(TrxArciveFile::class,'category_id','id');
+        return $this->belongsTo(MasterCategory::class,'category_id','id');
     }
 }
