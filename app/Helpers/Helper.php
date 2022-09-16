@@ -18,8 +18,8 @@ function getCureentYear(){
     return [2021,2022,2023,2024,2025,2026,2027];
 }
 
-function getCureentMonth(){
-    return [
+function getCureentMonth($current=null){
+    $data = [
         [
             'id'=>1,
             'name'=>'Januari'
@@ -69,6 +69,13 @@ function getCureentMonth(){
             'name'=>'Desember'
         ]
     ];
+    if($current==null){
+        $result = $data;
+    }
+    else{
+        $result = $data[$current-1]['name'] ?? '-';
+    }
+    return $result;
 }
 
 function getIconImage($extention){

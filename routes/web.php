@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\ArciveController;
+use App\Http\Controllers\ListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,4 +86,10 @@ Route::group(['prefix'=>'arcive','auth'],function ($route){
     $route->post('update',[ArciveController::class,'update']);
 
     $route->delete('delete/{id}',[ArciveController::class,'delete']);
+});
+
+Route::group(['prefix'=>'list','auth'],function ($route){
+    $route->get('/',[ListController::class,'index'])->name('list.index');
+
+    $route->get('data',[ListController::class,'datalist']);
 });

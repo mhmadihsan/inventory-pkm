@@ -37,6 +37,7 @@
             <li class="menu-header">ARCIVE</li>
             <li class="{{set_active('arcive.index')}}"><a class="nav-link" href="{{url('arcive')}}"><i class="fa fa-paper-plane"></i> <span>Arcive Data</span></a></li>
 
+            <li class="{{set_active('list.index')}}"><a class="nav-link" href="{{url('list')}}"><i class="fa fa-list"></i> <span>List Data</span></a></li>
             {{--            <li class="nav-item dropdown">--}}
 {{--                <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>--}}
 {{--                <ul class="dropdown-menu">--}}
