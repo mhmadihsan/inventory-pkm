@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="{{url('https://use.fontawesome.com/releases/v5.7.2/css/all.css')}}" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="{{asset('stisla/node_modules/bootstrap-social/bootstrap-social.cs')}}">
+    <link rel="stylesheet" href="{{asset('stisla1/node_modules/bootstrap-social/bootstrap-social.cs')}}">
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('stisla/assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('stisla/assets/css/components.css')}}">
+    <link rel="stylesheet" href="{{asset('stisla1/assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('stisla1/assets/css/components.css')}}">
 </head>
 
 <body>
@@ -87,13 +87,13 @@
 <script src="{{url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')}}" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="{{url('https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js')}}"></script>
 <script src="{{url('https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js')}}"></script>
-<script src="{{asset('stisla/assets/js/stisla.js')}}"></script>
+<script src="{{asset('stisla1/assets/js/stisla.js')}}"></script>
 
 <!-- JS Libraies -->
 
 <!-- Template JS File -->
-<script src="{{asset('stisla/assets/js/scripts.js')}}"></script>
-<script src="{{asset('stisla/assets/js/custom.js')}}"></script>
+<script src="{{asset('stisla1/assets/js/scripts.js')}}"></script>
+<script src="{{asset('stisla1/assets/js/custom.js')}}"></script>
 
 <!-- Page Specific JS File -->
 </body>
