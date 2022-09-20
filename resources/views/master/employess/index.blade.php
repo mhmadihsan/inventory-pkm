@@ -7,18 +7,18 @@
 @section('content_main')
     <section class="section">
         <div class="section-header">
-            <h1>Table</h1>
+            <h1>Pegawai</h1>
             <div class="section-header-breadcrumb">
-                <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                <div class="breadcrumb-item"><a href="#">Bootstrap Components</a></div>
-                <div class="breadcrumb-item">Table</div>
+                @foreach(Request::segments() as $seg)
+                    <div class="breadcrumb-item"><a href="#">{{$seg}}</a></div>
+                @endforeach
             </div>
         </div>
 
         <div class="section-body">
-            <h2 class="section-title">Kategori</h2>
+            <h2 class="section-title">Pegawai</h2>
             <p class="section-lead">
-                Tambah Data Pegawai
+                Sistem Aplikasi Laporan Bulanan Puskesmas
             </p>
 
             <div class="row">
