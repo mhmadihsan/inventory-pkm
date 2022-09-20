@@ -9,10 +9,10 @@
     <!-- CSS Libraries -->
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{{asset('stisla/assets/css/style.css')}}">
-    <link rel="stylesheet" href="{{asset('stisla/assets/css/components.css')}}">
+    <link rel="stylesheet" href="{{asset('stisla1/assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('stisla1/assets/css/components.css')}}">
 
-    <link rel="stylesheet" href="{{asset('stisla/node_modules/select2/dist/css/select2.min.css')}}">
+    <link rel="stylesheet" href="{{asset('stisla1/node_modules/select2/dist/css/select2.min.css')}}">
 
     @yield('custom_css')
 </head>
