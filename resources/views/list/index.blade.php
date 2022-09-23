@@ -107,5 +107,14 @@
             //
             // });
         });
+        (function() {
+            document.querySelector('input[type="file"]').addEventListener("change", function(event) {
+                var _size = this.files[0].size;
+                if(_size > 2000000){
+                    alert('Peringatan File Lebih dari 2 Mb');
+                    this.value= null;
+                }
+            });
+        })();
     </script>
 @endsection

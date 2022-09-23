@@ -30,6 +30,7 @@ function show_add(btn){
 }
 
 function btn_submit(btn){
+    $(btn).attr('disabled', true);
     var tahun = $('#input_tahun').val();
     var bulan = $('#input_month').val();
     var nama_file = $('#input_name_file').val();
@@ -50,7 +51,7 @@ function btn_submit(btn){
             'Content-Type': 'multipart/form-data'
         }
     }).then(function (response) {
-        console.log(response.data);
+
         if (response.data.status == "failed") {
             $('#exampleModal').modal('show');
             $(btn).attr('disabled', false);
@@ -111,6 +112,7 @@ function show_edit(btn){
 }
 
 function btn_update(btn){
+    $(btn).attr('disabled', true);
     var tahun = $('#edit_tahun').val();
     var bulan = $('#edit_month').val();
     var nama_file = $('#edit_name_file').val();

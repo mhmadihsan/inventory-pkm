@@ -71,4 +71,15 @@
     <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
     <script src="{{url('https://cdn.jsdelivr.net/npm/sweetalert2@11.4.32/dist/sweetalert2.all.min.js')}}"></script>
     <script src="{{asset('js/arcive/index.js')}}"></script>
+    <script>
+        (function() {
+            document.querySelector('input[type="file"]').addEventListener("change", function(event) {
+                var _size = this.files[0].size;
+                if(_size > 2000000){
+                    alert('Peringatan File Lebih dari 2 Mb');
+                    this.value= null;
+                }
+            });
+        })();
+    </script>
 @endsection
