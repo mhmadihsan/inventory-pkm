@@ -11,7 +11,7 @@
 
     @if(\Illuminate\Support\Facades\Auth::user()->hasRole('superadmin'))
         <td>
-            <a data-id="{{$d->id}}" href="{{url('storage/'.$slice[1].'/'.$slice[2])}}" class="btn btn-sm btn-info"> <i class="fa fa-info-circle"></i> </a>
+            <a data-id="{{$d->id}}" target="_blank" href="{{url('storage/'.$slice[1].'/'.$slice[2])}}" class="btn btn-sm btn-info"> <i class="fa fa-info-circle"></i> </a>
             <button data-id="{{$d->id}}" onclick="show_edit(this)" class="btn btn-sm btn-success"> <i class="fa fa-edit"></i> </button>
             <button data-id="{{$d->id}}" onclick="show_delete(this)" class="btn btn-sm btn-danger"> <i class="fa fa-trash"></i> </button>
         </td>

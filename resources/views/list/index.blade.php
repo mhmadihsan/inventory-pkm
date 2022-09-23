@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-3 col-lg-3">
                                 <label for="">Kategori</label>
-                                <select name=""  class="form-control select2" id="filter_kategori">
+                                <select name="" onchange="filter_data()" class="form-control select2" id="filter_kategori">
                                     <option value="xyz">SEMUA</option>
                                     @foreach($category as $m)
                                         <option value="{{$m->id}}">{{$m->name}}</option>
