@@ -57,7 +57,14 @@ class ArciveController extends Controller
             'bulan'=>'required|numeric',
             'nama_file'=>'required|min:4',
             'keterangan'=>'nullable|min:3',
-            'file'=>'required|max:500000|mimes:pdf,xls,xlxs,docx,doc'
+            [
+                'file'      => $request->file,
+                'extension' => strtolower($request->file->getClientOriginalExtension()),
+            ],
+            [
+                'file'          => 'required|max:500000',
+                'extension'      => 'required|in:doc,docx,csv,xlsx,xls,docx,ppt',
+            ]
         ]);
         if ($validator->fails()) {
             return response()->json([
@@ -81,8 +88,16 @@ class ArciveController extends Controller
             'nama_file'=>'required|min:4',
             'keterangan'=>'nullable|min:3',
             'id'=>'required',
-            'file'=>'nullable|sometimes|max:500000|mimes:pdf,xls,xlxs,docx,doc'
+            [
+                'file'      => $request->file,
+                'extension' => strtolower($request->file->getClientOriginalExtension()),
+            ],
+            [
+                'file'          => 'required|max:500000',
+                'extension'      => 'required|in:doc,docx,csv,xlsx,xls,docx,ppt',
+            ]
         ]);
+
         if ($validator->fails()) {
             return response()->json([
                 "status" => "failed",
