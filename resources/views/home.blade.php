@@ -81,7 +81,7 @@
                                     <img class="mr-3 rounded-circle" width="50" src="{{asset('stisla/assets/img/avatar/avatar-1.png')}}" alt="avatar">
                                     <div class="media-body">
                                         <div class="float-right text-primary">{{$d->updated_at}}</div>
-                                        <div class="media-title">{{$d->user->employess->name}}</div>
+                                        <div class="media-title">{{$d->user->employess->name ?? 'SuperAdmin'}}</div>
                                         <span class="text-small text-muted">{{$d->category->name}} : {{$d->name_file}}</span>
                                     </div>
                                 </li>
