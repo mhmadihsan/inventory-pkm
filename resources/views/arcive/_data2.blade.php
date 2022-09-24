@@ -23,7 +23,7 @@
                     <div class="article-details">
                         <p>
                             Nama File :  {{$v->name_file}} <br>
-                            Author : {{$v->user->employess->name}} <br>
+                            Author : {{$v->user->employess->name ?? 'Superadmin'}} <br>
                             Uploaded : {{$v->uploaded_at}} <br>
                             Keterangan : {{$v->keterangan}}
                         </p>
