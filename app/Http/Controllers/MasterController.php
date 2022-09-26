@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MasterCategory;
 use App\Models\MasterEmployess;
 use App\Models\MasterSector;
+use App\Models\PivotSectorEmployess;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\V2\Transaksi\TrxLkjipTriwulan;
@@ -191,17 +192,28 @@ class MasterController extends Controller
             ]);
         }
         else{
-            MasterEmployess::updateOrCreate(
-                [
-                    'id'=>$request->id,
-                ],
-                [
-                    'sector_id'=>$request->bidang,
-                    'nip'=>$request->nomor,
-                    'name'=>$request->nama,
-                    'jabatan'=>$request->jabatan,
-                ]
-            );
+
+            $data = MasterEmployess::updateOrCreate(
+                        [
+                            'id'=>$request->id,
+                        ],
+                        [
+                            'sector_id'=>null,
+                            'nip'=>$request->nomor,
+                            'name'=>$request->nama,
+                            'jabatan'=>$request->jabatan,
+                        ]
+                    );
+            if($request->has('id')){
+                foreach ($request->bidang as $b){
+                    $this->sysSector($request->id,$b);
+                }
+            }
+            else{
+                foreach ($request->bidang as $b){
+                    $this->sysSector($data->id,$b);
+                }
+            }
         }
         return response()->json([
             "status" => "success",
@@ -323,5 +335,18 @@ class MasterController extends Controller
             'data'=>$data,
             'role'=>$roles
         ])->with('no',1);
+    }
+
+    private function sysSector($EmployessId, $SectorId){
+        PivotSectorEmployess::updateOrCreate(
+            [
+                'master_sector_id'=>$SectorId,
+                'employess_id'=>$EmployessId,
+            ],
+            [
+                'master_sector_id'=>$SectorId,
+                'employess_id'=>$EmployessId,
+            ]
+        );
     }
 }

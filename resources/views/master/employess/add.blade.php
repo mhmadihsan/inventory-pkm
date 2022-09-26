@@ -28,8 +28,8 @@
 
                             <div class="form-group">
                                 <label>Bidang <text class="text-danger">*</text></label>
-                                <select id="input_bidang" class="form-control select2">
-                                    <option>PILIH BIDANG</option>
+                                <select id="input_bidang" multiple class="form-control select2">
+
                                     @foreach($sector as $s)
                                         <option value="{{$s->id}}">{{$s->name}}</option>
                                     @endforeach
@@ -67,6 +67,11 @@
 @section('custom_js')
     <script src="{{url('https://cdn.jsdelivr.net/npm/sweetalert2@11.4.32/dist/sweetalert2.all.min.js')}}"></script>
     <script src="{{asset('js/master/employess/index.js')}}"></script>
+    <script>
+        $("#input_bidang").select2({
+            placeholder: "**Put Your Place Holder Here**"
+        });
+    </script>
 @endsection
 
 

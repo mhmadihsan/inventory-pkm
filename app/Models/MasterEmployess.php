@@ -24,4 +24,8 @@ class MasterEmployess extends Model
     public function sector(){
         return $this->belongsTo(MasterSector::class,'sector_id','id');
     }
+
+    public function moresector(){
+        return $this->belongsToMany(MasterSector::class,'employess_sector','employess_id','master_sector_id');
+    }
 }

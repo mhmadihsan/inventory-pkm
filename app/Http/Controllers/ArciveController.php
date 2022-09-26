@@ -18,6 +18,7 @@ class ArciveController extends Controller
         $year = getCureentYear();
         $month = getCureentMonth();
         $category = $this->tools->getCategory();
+
         return view('arcive.index',[
             'now'=>now(),
             'year'=>$year,

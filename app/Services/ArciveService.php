@@ -17,7 +17,9 @@ class ArciveService
     public function getCategory(){
         $user = Auth::user();
         if($user->hasRole('admin')){
-            $category = $user->employess->sector->category ?? null;
+            $category = $user->employess->moresector->map(function ($val){
+                                            return $val->category;
+                        })->collapse() ?? collect();
         }
         else{
             $category = MasterCategory::get();
@@ -69,7 +71,8 @@ class ArciveService
     public function manipulate($data){
         $user = Auth::user();
         if($user->hasRole('admin')){
-            $result = $data->map(function ($val)use($user){
+            $data1 = $data->where('user_id',$user->id);
+            $result = $data1->map(function ($val)use($user){
                 $hasil = $val;
                 if($val->user_id==$user->id){
                     $hasil->edited = true;

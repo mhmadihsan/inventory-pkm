@@ -48,7 +48,13 @@
                                         <td>{{$d->nip}}</td>
                                         <td>{{$d->name ?? '-'}}</td>
                                         <td>{{$d->jabatan}}</td>
-                                        <td>{{$d->sector->name ?? '-'}}</td>
+
+                                        <td>
+                                            @foreach($d->moresector as $s)
+                                                | {{$s->name ?? '-'}}
+                                            @endforeach
+                                        </td>
+
                                         <td>
                                             <div class="btn-group mb-2" role="group" aria-label="Basic example">
                                                 <a href="{{url('master/employess/edit/'.$d->id.'')}}" class="btn btn-success">Edit</a>

@@ -28,13 +28,15 @@
                             <input type="text" autocomplete="off" hidden readonly disabled value="{{$data->id}}" id="input_id" class="form-control">
                             <div class="form-group">
                                 <label>Bidang <text class="text-danger">*</text></label>
-                                <select id="input_bidang" class="form-control select2">
-                                    <option>PILIH BIDANG</option>
+                                <select id="input_bidang" multiple class="form-control select2">
                                     @foreach($sector as $s)
                                         <option value="{{$s->id}}"
-                                                    @if($data->sector_id==$s->id)
-                                                        selected
-                                                    @endif
+                                                    @foreach($data->moresector->pluck('id') as $idx)
+                                                         @if($idx==$s->id)
+                                                            selected
+                                                        @endif
+                                                    @endforeach
+
                                         >{{$s->name}}</option>
                                     @endforeach
                                 </select>
