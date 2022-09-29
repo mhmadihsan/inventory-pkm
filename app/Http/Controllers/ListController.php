@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\MasterCategory;
 use App\Models\TrxArciveFile;
 use App\Services\ArciveService;
 use Illuminate\Http\Request;
@@ -18,11 +19,13 @@ class ListController extends Controller
         $year = getCureentYear();
         $month = getCureentMonth();
         $category = $this->tools->getCategory();
+        $allcategory = MasterCategory::get();
         return view('list.index',[
             'year'=>$year,
             'month'=>$month,
             'category'=>$category,
-            'now'=>now()
+            'now'=>now(),
+            'allcategory'=>$allcategory
         ]);
     }
 
@@ -40,9 +43,9 @@ class ListController extends Controller
         else{
             $result = $data->where('category_id',$request->category);
         }
-        $final_result =  $this->manipulateData($result);
+        //$final_result =  $this->manipulateData($result);
         return view('list._data',[
-            'data'=>$final_result
+            'data'=>$result
         ])->with('no',1);
     }
 

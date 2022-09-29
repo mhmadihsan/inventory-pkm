@@ -64,7 +64,7 @@
                                 <label for="">Kategori</label>
                                 <select name="" onchange="filter_data()" class="form-control select2" id="filter_kategori">
                                     <option value="xyz">SEMUA</option>
-                                    @foreach($category as $m)
+                                    @foreach($allcategory as $m)
                                         <option value="{{$m->id}}">{{$m->name}}</option>
                                     @endforeach
                                 </select>
@@ -78,7 +78,7 @@
                                     <th scope="col">Waktu</th>
                                     <th scope="col">Kategori</th>
                                     <th scope="col">Nama File</th>
-                                    <th scope="col">Type</th>
+                                    <th scope="col">Author</th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                                 </thead>

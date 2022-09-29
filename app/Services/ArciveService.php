@@ -71,8 +71,8 @@ class ArciveService
     public function manipulate($data){
         $user = Auth::user();
         if($user->hasRole('admin')){
-            $data1 = $data->where('user_id',$user->id);
-            $result = $data1->map(function ($val)use($user){
+//            $data1 = $data->where('user_id',$user->id);
+            $result = $data->map(function ($val)use($user){
                 $hasil = $val;
                 if($val->user_id==$user->id){
                     $hasil->edited = true;
